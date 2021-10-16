@@ -4,14 +4,11 @@ const path = require('path');
 const mode = process.env.NODE_ENV || 'development'
 const target = mode === 'development' ? 'web' : 'browserslist'
 
-const ROOT_MAIN = path.resolve(__dirname, 'Source/main.js')
 
 
 
 module.exports = {
-
-
-  entry: ROOT_MAIN,
+  entry: path.resolve(__dirname, 'Source/main.tsx'),
 
   mode: mode,
 
@@ -19,27 +16,27 @@ module.exports = {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
   },
 
-
-
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
 
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
+  },
+
   target: target,
 
-
   module: {
-
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
             loader: "babel-loader",
         }
       }
-    ],
-  },
-
+    ]
+  }
 };
