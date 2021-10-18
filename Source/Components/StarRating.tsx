@@ -1,15 +1,14 @@
 import * as React from "react";
-import { faSvgFromIcon, Icons } from '../fa-icons'
+import { FaStar } from 'react-icons/fa'
 
 
 interface IconWrapperProps {
     selected: boolean
-    icon: string
     onSelect: () => void
 }
 
-const IconWrapper: React.FC<IconWrapperProps> = ({ selected = false, icon, onSelect = f => f }) => {
-    return <i style={{ color: selected ? 'red' : 'grey' }} dangerouslySetInnerHTML={{ __html: icon }} onClick={onSelect}></i>
+const IconWrapper: React.FC<IconWrapperProps> = ({ selected = false, onSelect = f => f }) => {
+    return <FaStar color={selected ? 'red' : 'gren'} onClick={onSelect} />
 }
 
 
@@ -21,7 +20,7 @@ export const StarRating = ({ totalStars = 5 }) => {
     return (
         <div style={{ padding: '5px'}}>
         { createArray(totalStars).map((n, i) => (
-            <IconWrapper key={n} selected={selectedStars > i} icon={faSvgFromIcon(Icons.fasFaStar, 3)} onSelect={() => setSelectedStars(i + 1)} />
+            <IconWrapper key={n} selected={selectedStars > i} onSelect={() => setSelectedStars(i + 1)} />
         )) }
 
         <p>
