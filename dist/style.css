@@ -1,3 +1,32 @@
+:root {
+    --back: #171321;
+    --dkblue: #0d314b;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+    --white: #f7f8fa;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    background-color: var(--back);
+    color: var(--white);
+    font-size: var(--font-size);
+}
+h1, h2, h3 {
+    margin: 0;
+}
+
 svg:not(:root).svg-inline--fa {
     overflow: visible;
 }
@@ -14,8 +43,4 @@ svg:not(:root).svg-inline--fa {
 }
 .fa-3x {
     font-size: 3em;
-}
-
-body {
-    background-color: antiquewhite;
 }

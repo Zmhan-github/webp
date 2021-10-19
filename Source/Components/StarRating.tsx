@@ -9,7 +9,7 @@ interface IconWrapperProps {
 }
 
 const IconWrapper: React.FC<IconWrapperProps> = ({ selected = false, icon, onSelect = f => f }) => {
-    return <i style={{ color: selected ? 'red' : 'grey' }} dangerouslySetInnerHTML={{ __html: icon }} onClick={onSelect}></i>
+    return <i style={{ color: selected ? 'red' : 'grey', display: 'inline-block' }} dangerouslySetInnerHTML={{ __html: icon }} onClick={onSelect}></i>
 }
 
 
@@ -19,7 +19,7 @@ export const StarRating = ({ totalStars = 5 }) => {
     const [selectedStars, setSelectedStars] = React.useState(0)
 
     return (
-        <div style={{ padding: '5px'}}>
+        <div>
         { createArray(totalStars).map((n, i) => (
             <IconWrapper key={n} selected={selectedStars > i} icon={faSvgFromIcon(Icons.fasFaStar, 3)} onSelect={() => setSelectedStars(i + 1)} />
         )) }
