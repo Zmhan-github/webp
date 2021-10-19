@@ -1,11 +1,11 @@
 import * as React from "react";
-import { faSvgFromIcon, Icons } from '../fa-icons'
+import {faSvgFromIcon, Icons} from '../fa-icons'
 
 
 interface IconWrapperProps {
     selected: boolean
-    icon: string
     onSelect: () => void
+    icon: string
 }
 
 const IconWrapper: React.FC<IconWrapperProps> = ({ selected = false, icon, onSelect = f => f }) => {
@@ -21,7 +21,7 @@ export const StarRating = ({ totalStars = 5 }) => {
     return (
         <div>
         { createArray(totalStars).map((n, i) => (
-            <IconWrapper key={n} selected={selectedStars > i} icon={faSvgFromIcon(Icons.fasFaStar, 3)} onSelect={() => setSelectedStars(i + 1)} />
+            <IconWrapper key={n} selected={selectedStars > i} icon={faSvgFromIcon(Icons.fasFaStar, 3)}onSelect={() => setSelectedStars(i + 1)} />
         )) }
 
         <p>
