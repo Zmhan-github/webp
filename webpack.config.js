@@ -18,13 +18,13 @@ module.exports = {
 
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist')
   },
 
-//   externals: {
-//     react: 'React',
-//     'react-dom': 'ReactDOM'
-//   },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
+  },
 
   target: target,
 

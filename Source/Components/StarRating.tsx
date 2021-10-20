@@ -2,6 +2,8 @@ import * as React from "react";
 import {faSvgFromIcon, Icons} from '../fa-icons'
 
 
+
+
 interface IconWrapperProps {
     selected: boolean
     onSelect: () => void
@@ -16,7 +18,7 @@ const IconWrapper: React.FC<IconWrapperProps> = ({ selected = false, icon, onSel
 const createArray = length => [...Array(length)]
 
 export const StarRating = ({ totalStars = 5 }) => {
-    const [selectedStars, setSelectedStars] = React.useState(0)
+    const [selectedStars, setSelectedStars] = React.useState<number>(0)
 
     return (
         <div>
