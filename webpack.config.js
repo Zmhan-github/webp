@@ -21,10 +21,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
 
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM'
-  },
+//   externals: {
+//     react: 'React',
+//     'react-dom': 'ReactDOM'
+//   },
 
   target: target,
 

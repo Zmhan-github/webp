@@ -18,7 +18,13 @@ const App: React.FC<AppProps> = ({ hello }) => {
             })
         })
     }, [])
-    return <div>{hello}<StarRating /></div>
+    return (
+        <div>{hello}
+            <img src="./lecsir.png" style={{ width: '90px'}}/>
+            {'Drink Lecsir!'}
+            <StarRating />
+        </div>
+    )
 }
 
 ReactDOM.render(<App hello="Hi Bro!" />, document.getElementById('root'))
